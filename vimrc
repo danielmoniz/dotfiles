@@ -84,7 +84,7 @@ set novisualbell    " Don't blink
 set noerrorbells    " No noises
 set showmatch       " Show matching brackets
 set mat=3           " Number of thenths of a second to blink match for
-set nonu            " Don't show line numbers
+set nu            " Don't show line numbers
 set nolist          " Don't show end of line and tab characters
 "set showbreak=$     " Use '$' for long line wrapping character
 syntax on           " Turn syntax hilighting on
@@ -95,7 +95,7 @@ set listchars=tab:>-,trail:.,eol:$ " Show trailing spaces when listing
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Use Pathogen to load bundles
-call pathogen#runtime_append_all_bundles()
+" call pathogen#runtime_append_all_bundles()
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -143,6 +143,9 @@ autocmd FileType asm set syn="asm68k"
 
 " for javascript
 autocmd FileType javascript set cindent shiftwidth=2 softtabstop=2 tabstop=8 expandtab
+
+" allow :make to be used to run a python file from vim
+set makeprg=python\ %
 
 " for python auto indent with 4 space tabs
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class 
