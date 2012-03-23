@@ -18,6 +18,7 @@ set printoptions=left:8pc,right:3pc  " printing options (pc = percent of page)
 "set nomodeline      " Don't let mode lines in files over ride this .vimrc
 set tagrelative     " Make paths in tag files relative to location of the tag file
 set title           " Set term titles
+set textwidth=79    " Set line breaks to occur automatically at 80 characters
 
 command W w !sudo tee % > /dev/null
 
