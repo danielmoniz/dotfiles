@@ -65,7 +65,7 @@ set viminfo=/10,'10,r.git/COMMIT_EDITMSG,r/mnt/zip,r/mnt/floppy,f0,h,\"100
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Text Formatting/Layout
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set tabstop=8       " Width of a tab character
+set tabstop=4       " Width of a tab character
 "set softtabstop=2   " Number of spaces inserted when tab is pressed
 "set shiftwidth=2    " Number of spaces in an indent
 "set expandtab       " Expand tabs into spaces
