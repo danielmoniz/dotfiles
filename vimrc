@@ -185,7 +185,8 @@ let NERDTreeIgnore=['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$']
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
 map <F4> :TlistToggle<cr>
-map <F5> :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude='@.ctagsignore' .<cr>
+" Disabled for CTags, below.
+"map <F5> :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude='@.ctagsignore' .<cr>
 
 " Display buffer list and switch to another buffer
 map <F6> :ls<Return>:b 
@@ -207,4 +208,17 @@ nnoremap <C-e> <C-e><C-e><C-e>
 nnoremap <C-y> <C-y><C-y><C-y>
 
 " Fuzzy Finder shortcut
-nnoremap <C-t> :<C-u>FufFile **/<CR>
+" Disabled for TagList, below.
+"nnoremap <C-t> :<C-u>FufFile **/<CR>
+
+" PEP8 checker
+" To install: sudo pip install pep8; sudo pip --upgrade pep8
+noremap <F5> :!pep8 --show-source %
+
+" Enable TagList (requires CTags)
+" Use :TlistOpen to start.
+" To install: sudo apt-get install exuberant-ctags; 
+" 	wget -O taglist.zip
+		" http://www.vim.org/scripts/download_script.php?src_id=7701; 
+" 	unzip into ~/.vim.
+filetype plugin on
