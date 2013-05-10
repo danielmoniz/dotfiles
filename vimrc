@@ -68,7 +68,7 @@ set viminfo=/10,'10,r.git/COMMIT_EDITMSG,r/mnt/zip,r/mnt/floppy,f0,h,\"100
 set tabstop=4       " Width of a tab character
 "set softtabstop=2   " Number of spaces inserted when tab is pressed
 "set shiftwidth=2    " Number of spaces in an indent
-"set expandtab       " Expand tabs into spaces
+set expandtab       " Expand tabs into spaces
 "set nowrap          " Don't wrap long lines
 set sidescroll=10   " Scroll 10 characters over when move off the screen
 
@@ -185,7 +185,6 @@ let NERDTreeIgnore=['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$']
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
 map <F4> :TlistToggle<cr>
-" Disabled for CTags, below.
 "map <F5> :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude='@.ctagsignore' .<cr>
 
 " Display buffer list and switch to another buffer
@@ -208,17 +207,14 @@ nnoremap <C-e> <C-e><C-e><C-e>
 nnoremap <C-y> <C-y><C-y><C-y>
 
 " Fuzzy Finder shortcut
-" Disabled for TagList, below.
 "nnoremap <C-t> :<C-u>FufFile **/<CR>
 
-" PEP8 checker
-" To install: sudo pip install pep8; sudo pip --upgrade pep8
-noremap <F5> :!pep8 --show-source %
+" allow for using <F5> to scan Python code for pep8 issues.
+:noremap <F5> :!pep8 --show-source %
 
-" Enable TagList (requires CTags)
-" Use :TlistOpen to start.
-" To install: sudo apt-get install exuberant-ctags; 
-" 	wget -O taglist.zip
-		" http://www.vim.org/scripts/download_script.php?src_id=7701; 
-" 	unzip into ~/.vim.
+" Allow for using Taglist to browse code.
 filetype plugin on
+
+" for .txt auto indent with 4 space tabs
+autocmd FileType txt set shiftwidth=4 softtabstop=4 textwidth=79 fo-=t
+autocmd FileType txt set smarttab expandtab autoindent smartindent
