@@ -149,7 +149,7 @@ autocmd FileType javascript set cindent shiftwidth=2 softtabstop=2 tabstop=8 exp
 set makeprg=python\ %
 
 " for python auto indent with 4 space tabs
-autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class 
+autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 autocmd FileType python set shiftwidth=4 softtabstop=4 textwidth=79 fo-=t
 autocmd FileType python set smarttab expandtab autoindent smartindent
 autocmd FileType python let ropevim_vim_completion=1
