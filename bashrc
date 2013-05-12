@@ -43,4 +43,7 @@ else
 fi
 
 
+# Generally use Vim as my editor of choice:
+export EDITOR=vim
+# Explicitly use Vim as editor for git:
 export GIT_EDITOR=/usr/bin/vim
